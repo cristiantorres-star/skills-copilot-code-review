@@ -11,9 +11,19 @@
       "module": "uvicorn",
       "args": [
         "src.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
         "--reload"
       ],
-      "jinja": true
+      "jinja": true,
+      "cwd": "${workspaceFolder}",
+      "serverReadyAction": {
+        "pattern": "Uvicorn running on (https?://\\S+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      }
     }
   ]
 }
